@@ -1,6 +1,7 @@
 class JobOffersController < ApplicationController
   def show
-    fetch_job_offers
+    @job_offers = fetch_job_offers
+    @job_offer = @job_offers.order("RANDOM()").first
   end
 
   private
@@ -24,7 +25,7 @@ class JobOffersController < ApplicationController
     if job_offers
       store_offers(job_offers.parsed["online"])
     else
-      JobOffer.all
+      JobOffer.pending
     end 
   end
 

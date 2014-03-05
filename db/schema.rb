@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140304145900) do
+ActiveRecord::Schema.define(:version => 20140305161924) do
 
   create_table "job_offers", :force => true do |t|
     t.text     "company_description"
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(:version => 20140304145900) do
     t.string   "company_picture_url"
     t.string   "recommendation"
     t.string   "self_application"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+    t.boolean  "recommended",              :default => false
   end
 
 end
