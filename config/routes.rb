@@ -1,7 +1,14 @@
 Keycoopt::Application.routes.draw do
+  get "recommendations/new"
+
+  get "recommendations/create"
+
   root to: "job_offers#index"
 
-  resources :job_offers, only: [:index, :show]
+  resources :job_offers, only: [:index, :show] do 
+    resources :recommendations, only: [:new, :create]
+  end
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

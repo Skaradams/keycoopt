@@ -1,5 +1,7 @@
 .job_offer
   %h2.title= @job_offer.title
   .description= @job_offer.description.html_safe
-  .next-offer= link_to "Next", job_offers_path
+  .recommend.pull-left= link_to "Recommend someone", new_job_offer_recommendation_path(@job_offer), class: 'btn btn-primary'
+  .next-offer.pull-left= link_to "Next", job_offers_path, class: "btn btn-success"
+
 
