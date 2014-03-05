@@ -1,7 +1,12 @@
 class JobOffersController < ApplicationController
+  def index
+    fetch_job_offers
+    @job_offer = JobOffer.pending.order("RANDOM()").first
+    redirect_to @job_offer
+  end
+
   def show
-    @job_offers = fetch_job_offers
-    @job_offer = @job_offers.order("RANDOM()").first
+    @job_offer = JobOffer.find(params[:id])
   end
 
   private
@@ -24,8 +29,6 @@ class JobOffersController < ApplicationController
 
     if job_offers
       store_offers(job_offers.parsed["online"])
-    else
-      JobOffer.pending
     end 
   end
 

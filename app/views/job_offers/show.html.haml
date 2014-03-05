@@ -1,2 +1,5 @@
-%h1 JobOffers#show
-%p Find me in app/views/job_offers/show.html.haml
+.job_offer
+  %h2.title= @job_offer.title
+  .description= @job_offer.description.html_safe
+  .next-offer= link_to "Next", job_offers_path
+

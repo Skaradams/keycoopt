@@ -1,7 +1,7 @@
 Keycoopt::Application.routes.draw do
-  root to: "job_offers#show"
+  root to: "job_offers#index"
 
-  resources :job_offers, only: [:show]
+  resources :job_offers, only: [:index, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
