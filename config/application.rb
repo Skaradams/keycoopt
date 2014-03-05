@@ -58,5 +58,9 @@ module Keycoopt
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    CLIENT_ID = "7c64231852fa7ce32d7d983d31572296b4c314409976e0381d64e750d61ec9ce"
+    SECRET_ID = "4a483d9e10981150a712fda16512b39dd6d3712f47e1e7b3a4659c05ce31eb2c"
+    ENDPOINT  = "https://staging.keycoopt.com"
   end
 end

@@ -34,4 +34,5 @@ Keycoopt::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.client_id = "7c64231852fa7ce32d7d983d31572296b4c314409976e0381d64e750d61ec9ce"
 end
