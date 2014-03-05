@@ -12,7 +12,14 @@ class CreateJobOffers < ActiveRecord::Migration
       t.string :salary
       t.text :summary
       t.string :title
-
+      t.string :experience_level 
+      t.string :company_baseline 
+      t.date :published_at 
+      t.boolean :recommendation_allowed 
+      t.boolean :self_application_allowed 
+      t.string :company_picture_url 
+      t.string :recommendation 
+      t.string :self_application
       t.timestamps
     end
   end

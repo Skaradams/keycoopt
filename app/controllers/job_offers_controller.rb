@@ -16,17 +16,27 @@ class JobOffersController < ApplicationController
         job_offers = token.get '/api/v1/job_offers', since: session[:last_fetched]
         session[:last_fetched] = Time.now.iso8601
       end
-    else
+    else 
       job_offers = token.get '/api/v1/job_offers'
       session[:last_fetched] = Time.now.iso8601
     end
-    # store_offers(job_offers)
+
+    if job_offers
+      store_offers(job_offers.parsed["online"])
+    else
+      JobOffer.all
+    end 
   end
 
   # Save offers in model when fetched
   def store_offers(job_offers)
     job_offers.each do |job_offer|
-
+      if model = JobOffer.find(job_offer["id"])
+        model.update_attributes job_offer
+        model.save
+      else
+        JobOffer.create job_offer
+      end
     end
   end
 
