@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140305173802) do
+ActiveRecord::Schema.define(:version => 20140305204341) do
 
   create_table "job_offers", :force => true do |t|
     t.text     "company_description"
@@ -49,8 +49,9 @@ ActiveRecord::Schema.define(:version => 20140305173802) do
     t.string   "linked_in"
     t.text     "message"
     t.boolean  "named"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "job_offer_id"
   end
 
 end
