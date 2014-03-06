@@ -23,10 +23,7 @@ module ApplicationHelper
   # Save offers in model when fetched
   def store_offers(job_offers)
     job_offers.each do |job_offer|
-      if model = JobOffer.find(job_offer["id"])
-        model.update_attributes job_offer
-        model.save
-      else
+      unless JobOffer.find(job_offer["id"])
         JobOffer.create job_offer
       end
     end

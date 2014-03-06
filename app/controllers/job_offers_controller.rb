@@ -7,5 +7,10 @@ class JobOffersController < ApplicationController
 
   def show
     @job_offer = JobOffer.find(params[:id])
+
+    # Don't show job offer if already recommended
+    if @job_offer.recommended == true
+      redirect_to root_path
+    end
   end
 end
