@@ -18,13 +18,4 @@ feature 'Job offers' do
     click_link "Recommender quelqu'un"
     expect(page).to have_content("Retour à l'offre")
   end
-
-  scenario 'Recommend someone without filling' do
-  end  
-
-  scenario 'Recommend someone with correct filling' do
-  end
-
-  scenario 'Recommend someone but API post fails' do
-  end
 end
