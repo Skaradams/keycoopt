@@ -1,3 +1,4 @@
+%h2= "Recommender quelqu'un pour l'offre : #{ @job_offer.title }"
 = simple_form_for @recommendation, url: job_offer_recommendations_path do |f|
   = f.input :first_name
   = f.input :last_name
@@ -10,6 +11,6 @@
   = f.input :message
   = f.input :job_offer_id, :as => :hidden, :input_html => { :value => @job_offer.id }
 
-  = f.submit
+  = f.submit "Recommender cette personne"
 
-.cancel= link_to "Return to job offer", @job_offer, class: "btn btn-danger"
+.cancel= link_to "Retour à l'offre", @job_offer, class: "btn btn-danger"

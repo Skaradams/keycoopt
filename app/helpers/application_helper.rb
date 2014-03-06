@@ -23,7 +23,7 @@ module ApplicationHelper
   # Save offers in model when fetched
   def store_offers(job_offers)
     job_offers.each do |job_offer|
-      unless JobOffer.find(job_offer["id"])
+      unless JobOffer.where(id: job_offer["id"]).present?
         JobOffer.create job_offer
       end
     end
@@ -32,7 +32,7 @@ module ApplicationHelper
   def create_recommendation(job_offer, recommendation)
     token = api_connect
 
-    if job_offer.present? and recommendation.present?
+    if job_offer.present? and recommendation.present? and recommendation.valid?
       response = token.post "/api/v1/job_offers/#{ job_offer.id }/recommendations", params: { recommendation: recommendation.attributes }
     end
     response.status if response

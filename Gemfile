@@ -33,6 +33,9 @@ gem 'simple_form'
 gem 'oauth2'
 gem 'random_record'
 
+gem 'rspec-rails'
+gem 'capybara'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

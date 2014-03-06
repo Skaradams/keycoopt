@@ -2,7 +2,7 @@ class JobOffersController < ApplicationController
   def index
     fetch_job_offers
     @job_offer = JobOffer.pending.random
-    redirect_to @job_offer
+    redirect_to @job_offer, notice: flash[:notice], flash: { error: "Votre recommendation n'a pas pu être prise en compte" }
   end
 
   def show

@@ -1,7 +1,9 @@
 .job_offer
-  %h2.title= @job_offer.title
+  %h2.title= "#{ @job_offer.title } - #{ @job_offer.company_name }"
+  %h3.date= "publié le #{ @job_offer.published_at }"
   .description= @job_offer.description.html_safe
-  .recommend.pull-left= link_to "Recommend someone", new_job_offer_recommendation_path(@job_offer), class: 'btn btn-primary'
-  .next-offer.pull-left= link_to "Next", job_offers_path, class: "btn btn-success"
+  .salary= "Salaire : #{ @job_offer.salary }"
+  .recommend.pull-left= link_to "Recommender quelqu'un", new_job_offer_recommendation_path(@job_offer), class: 'btn btn-primary'
+  .next-offer.pull-left= link_to "Offre suivante", job_offers_path, class: "btn btn-success"
 
 
