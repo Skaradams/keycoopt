@@ -20,7 +20,4 @@ feature 'Recommendation' do
     click_button "Recommender cette personne"
     expect(page).to have_content("Votre recommendation a bien été prise en compte")
   end
-
-  scenario 'Recommend someone but API post fails' do
-  end
 end
